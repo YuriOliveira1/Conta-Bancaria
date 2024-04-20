@@ -1,17 +1,13 @@
 import java.util.Date;
+import java.text.DateFormat;
 
 public class Transacao{
 
-    private int id;
+    private static int id = 1000;
     @SuppressWarnings("unused")
     private double valor;
-    private Date data;
-
-    public Transacao(int id, double valor) {
-        this.id = id;
-        this.valor = valor;
-        this.data = new Date();
-    }
+    @SuppressWarnings("unused")
+    private static DateFormat data;
 
     public static boolean efetuarTransacao(Conta conta, boolean credito, double valor){
         if (credito) {
@@ -20,5 +16,14 @@ public class Transacao{
         } else {
             return conta.debito(valor);
         }
+    }
+
+     public static String getData() {
+        DateFormat dtHora = DateFormat.getDateTimeInstance();
+		return dtHora.format(new Date());
+    }
+
+    public static int getId() {
+        return id++;
     }
 }

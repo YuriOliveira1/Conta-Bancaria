@@ -17,11 +17,24 @@ public class Conta {
         saldo += valor;
     }
 
+    public void mostrar(){
+        System.out.println("ID da CONTA: " + getId());
+        System.out.println("Saldo: " + getSaldo());
+    }
+
     public double getSaldo() {
         return saldo;
     }
 
     public void setSaldo(double saldo) {
         this.saldo = saldo;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
